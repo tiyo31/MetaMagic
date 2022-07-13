@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -27,14 +28,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 
     private function setSchemaDefaultLength(): void
     {
         try {
             Schema::defaultStringLength(191);
+        } catch (\Exception $exception) {
         }
-        catch (\Exception $exception){}
     }
 }
